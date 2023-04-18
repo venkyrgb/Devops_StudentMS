@@ -1,0 +1,24 @@
+version: 0.2
+
+env:
+  variables:
+    SONAR_TOKEN: "dac2d68e04e29638b1a7cb7cf6067f6d24d1fa64"
+
+phases:
+  pre_build:
+    commands:
+      - python --version
+      - pip install --upgrade pip
+      - pip install -r requirements.txt
+      - wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-3.3.0.1492-linux.zip
+      - unzip ./sonar-scanner-cli-3.3.0.1492-linux.zip
+      - export PATH=$PATH:/root/sonar-scanner-3.3.0.1492-linux/bin/
+  build:
+    commands:
+      - sonar:scanner \
+          -Dsonar.projectKey=devops
+          -Dsonar.organization=venky-vicky-nci
+          -Dsonar.sources=. \
+          -Dsonar.host.url=https://sonarcloud.io \
+          -Dsonar.login=$SONAR_TOKEN
+   
