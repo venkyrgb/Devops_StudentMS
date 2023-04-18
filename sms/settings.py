@@ -27,7 +27,7 @@ SECRET_KEY = 'ates_d67wquk((7=+$u1qy1_tl^*ypiny@9zhnw3c$6k&b=6pq'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['198.211.99.20', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['198.211.99.20', 'localhost', '127.0.0.1','venkydev-env.eba-wm3pccrk.eu-west-1.elasticbeanstalk.com']
 
 
 # Application definition
